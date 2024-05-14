@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to CBA</title>
+    <link rel="stylesheet" href="{% static 'main/GPT/join.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to <span>CBA</span></h1>
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            <div class="input-group">
+                <input type="text" name="username" placeholder="아이디" required>
+            </div>
+            <div class="input-group">
+                <input type="password" name="password" placeholder="비밀번호" required>
+            </div>
+            <button type="submit">로그인 하기</button>
+            <a href="{% url 'register' %}">아이디/비밀번호 찾기</a>
+            <a href="{% url 'register' %}">회원가입</a>
+        </form>
+    </div>
+</body>
+</html>

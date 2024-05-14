@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to CBA</title>
+    <link rel="stylesheet" href="{% static 'main/GPT/join.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to<br><span class="cba">CBA</span></h1>
+        <form method="post" action="{% url 'register' %}">
+            {% csrf_token %}
+            <div class="input-group">
+                <img src="{% static 'assets/vectors/id_1_x2.svg' %}" alt="">
+                <input type="text" name="username" placeholder="아이디를 입력해주세요.">
+            </div>
+            <div class="input-group">
+                <img src="{% static 'assets/vectors/pw_x2.svg' %}" alt="">
+                <input type="password" name="password1" placeholder="비밀번호를 입력해주세요.">
+            </div>
+            <div class="input-group">
+                <img src="{% static 'assets/vectors/pw_x2.svg' %}" alt="">
+                <input type="password" name="password2" placeholder="비밀번호를 확인해주세요.">
+            </div>
+            <div class="input-group">
+                <img src="{% static 'assets/vectors/name_1_x2.svg' %}" alt="">
+                <input type="text" name="first_name" placeholder="이름을 입력해주세요.">
+            </div>
+            <div class="input-group">
+                <img src="{% static 'assets/vectors/phone_1_x2.svg' %}" alt="">
+                <input type="text" name="phone_number" placeholder="연락처를 입력해주세요.">
+            </div>
+            <button type="submit" class="submit">가입 완료</button>
+        </form>
+    </div>
+</body>
+</html>
